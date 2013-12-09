@@ -1,0 +1,28 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "compass";
+$short-sprite-dimensions: true;
+
+.no-scroll {overflow:hidden;-webkit-overflow-scrolling: touch;}
+.wrapper {max-width:980px; margin:0 auto; }
+.wrapper-modal {padding:0 330px 0 0; @include box-sizing(border-box); position:relative; z-index:10; }
+
+.header {}
+.header .span12 {padding:40px 0px 40px 0px; position: relative;}
+.header-logo {}
+
+.lang {position: absolute; top:-5px; right:0px; margin:0; padding:0; list-style: none;}
+.lang-ru,.lang-en {float:left; margin:5px 0 0 5px;  }
+.lang-a {float:left; width:16px; height:11px; background:url(flags.png) left top no-repeat; text-decoration: none !important;}
+.lang-en .lang-a {background-position: left bottom;}
+.lang-all {padding:4px 5px 6px; background:#ddd; @include border-radius(0 0 6px 6px);}
+.lang-active {background:#C7D647;}
+
+.btop-container-height {overflow:hidden;}
+
+.content {}
+.content h1 {font-size:26px;}
+
+.footer {padding:50px 0 20px 0; color:#888;}
+
+.fade { @include transition(opacity 0.5s linear); opacity:0;}
