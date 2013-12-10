@@ -5,8 +5,8 @@ class MessagesController < ApplicationController
                   phone:      params[:phone],
                   mes:        params[:mes],
                   phone_to:   params[:to],
-                  sent:       params[:sent],
-                  recieved:   params[:time],
+                  sent:       Time.at(params[:sent].to_f).to_datetime,
+                  recieved:   Time.at(params[:time].to_f).to_datetime,
                   md5:        params[:md5],
                   sha1:       params[:sha1],
                   crc32:      params[:crc32]
