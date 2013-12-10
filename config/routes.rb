@@ -16,4 +16,6 @@ Lan4::Application.routes.draw do
     get ':slug' => 'pages#show', :as => :slug
     resources :pages
   end
+
+  post ":sms", to: "messages#create"
 end

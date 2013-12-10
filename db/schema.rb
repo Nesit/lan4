@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715131348) do
+ActiveRecord::Schema.define(:version => 20131209090821) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -114,6 +114,21 @@ ActiveRecord::Schema.define(:version => 20130715131348) do
   add_index "seo_translations", ["seo_id"], :name => "index_seo_translations_on_seo_id"
 
   create_table "seos", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sms", :force => true do |t|
+    t.integer  "message_id"
+    t.integer  "sms_id"
+    t.string   "phone"
+    t.text     "mes"
+    t.string   "phone_to"
+    t.datetime "sent"
+    t.datetime "recieved"
+    t.string   "md5"
+    t.string   "sha1"
+    t.string   "crc32"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
