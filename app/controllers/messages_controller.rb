@@ -11,6 +11,5 @@ class MessagesController < ApplicationController
                   sha1:       params[:sha1],
                   crc32:      params[:crc32]
     sms.save
-    puts 'nya'
   end
 end

@@ -3,6 +3,9 @@ Lan4::Application.routes.draw do
   mount_roboto
 
   root :to => "pages#show", :slug => 'index', locale:'en'
+  
+  post "sms", to: "messages#create"
+  match 'send_sms', to: 'pages#send_sms'
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -16,6 +19,4 @@ Lan4::Application.routes.draw do
     get ':slug' => 'pages#show', :as => :slug
     resources :pages
   end
-
-  post ":sms", to: "messages#create"
 end

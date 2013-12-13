@@ -94,3 +94,5 @@ group :development, :test do
 end
 
 gem 'rename' # For rename project with one comand "rails g rename:app_to New-Name"
+
+gem 'simple_captcha'

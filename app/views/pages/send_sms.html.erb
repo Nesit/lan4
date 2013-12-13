@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <div class="row-fluid content">
+    <%= form_tag :action => 'send_sms' do %>
+      <%= text_field_tag 'phone_number', ''%>
+      <%= submit_tag 'Отправить', class: "submit_button orange" %>
+    <% end %>
+  </div>
+</div>
