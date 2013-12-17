@@ -14,3 +14,6 @@ en:
   translation:
     en: "English"
     ru: "Русский"
+  simple_captcha:
+    placeholder: ""
+    label: ""

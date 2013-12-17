@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
    
+  include SimpleCaptcha::ControllerHelpers
+  
   before_filter :export_i18n_messages
 
   def export_i18n_messages

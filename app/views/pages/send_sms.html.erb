@@ -2,6 +2,7 @@
   <div class="row-fluid content">
     <%= form_tag :action => 'send_sms' do %>
       <%= text_field_tag 'phone_number', ''%>
+      <%= show_simple_captcha %>
       <%= submit_tag 'Отправить', class: "submit_button orange" %>
     <% end %>
   </div>

@@ -1,4 +1,5 @@
 require 'smsc_lib'
+require 'digest/sha2'
 
 class PagesController < ApplicationController
   layout :layout
@@ -10,16 +11,20 @@ class PagesController < ApplicationController
 
   def send_sms
     phone_number = params[:phone_number]
-    result = if phone_number
-      #puts phone_number
-      sms = SMSC.new()
-      sms.send_sms(phone_number, "Ваш пароль: 123", 0)
+    result = if phone_number and simple_captcha_valid?
+      puts generate_code(phone_number)
+      #sms = SMSC.new()
+      #sms.send_sms(phone_number, "Ваш пароль: " + generate_code(phone_number), 0)
     else
       {}
     end
   end
 
   private
+
+  def generate_code(number)
+    Digest::SHA512.hexdigest(number + "himitsu")[0..5].to_i(16)
+  end
 
   def view_exists?(view)
     File.exists? Rails.root.join("app", "views", view)

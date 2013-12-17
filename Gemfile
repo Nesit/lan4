@@ -95,4 +95,5 @@ end
 
 gem 'rename' # For rename project with one comand "rails g rename:app_to New-Name"
 
-gem 'simple_captcha'
+gem 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
+gem 'rmagick'
